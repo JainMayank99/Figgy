@@ -20,11 +20,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        
+
         <!-- Favicons -->
         <link rel="shortcut icon" href="../images/favicon.ico">
         <link rel="apple-touch-icon" href="../images/icon.png">
-        
+
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -37,10 +37,11 @@
 
         <!-- Modernizer js -->
         <script src="../js/vendor/modernizr-3.5.0.min.js"></script>
-       <script>
+        <script>
             var request = new XMLHttpRequest();
             function searchInfo(value) {
-                name=value;
+                name = value;
+
                 var url = "Ajax.jsp?val=" + name;
 
                 try {
@@ -56,18 +57,20 @@
                     alert("Unable to connect to server");
                 }
             }
-        </script>
-        <script>
-            var request = new XMLHttpRequest();
-            function addCart(value) {
-                name=value;
-                var url = "../pushcartAjax.jsp?val=" + name;
+            request = new XMLHttpRequest();
+            function add(value) {
+                var food = value;
+                //CHange values wfor dynamic
+                var cos_id = 1;
+                alert(food, cos_id);
+
+                var url = "../cart/pushcartAjax.jsp?food=" + food + "&cos=" + cos_id;
 
                 try {
                     request.onreadystatechange = function () {
                         if (request.readyState == 4) {
-                            var val = request.responseText;
-                            document.getElementById('newdone').innerHTML = val;
+                            // var val = request.responseText;
+                            //document.getElementById('para').innerHTML = val;
                         }
                     }//end of function  
                     request.open("GET", url, true);
@@ -76,34 +79,37 @@
                     alert("Unable to connect to server");
                 }
             }
+
+
+
+
+
         </script>
-       
-        
-        
+
+
+
+
     </head>
     <body>
-       
 
 
-    <div class="container h-100">
-      <div class="d-flex justify-content-center h-100">
-        <div class="searchbar">
-          <input class="search_input" type="text" name="name" placeholder="Search.."  onfocusin="myFunction()" onkeyup="searchInfo(this.value)">  
-          <a class="search_icon"><i class="fas fa-search"></i></a>
+        <%@include file="../header.jsp" %>
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100 myown">
+                <div class="searchbar">
+                    <span>Search:</span>
+                    <input class="search_input" type="text" name="name" placeholder="Enter Text Here"  onfocusin="myFunction()" onkeyup="searchInfo(this.value)">  
+                    <a class="search_icon"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-        
-        
         <div id="mylocation" style="display:none;">
-       
-        </div>
-        
+        </div>     
         <%
             String pagemsg = null;
             try {
                 pagemsg = request.getParameter("num").toString();
-                System.out.println(pagemsg);
+
             } catch (Exception ex) {
             }
 
@@ -123,7 +129,11 @@
              response.sendRedirect("../index.jsp");
 
              }*/%>
+
         <div class="wrapper" id="wrapper">
+
+
+
             <section class="food__menu__grid__area section-padding--lg">
                 <div class="container">
                     <div class="row mt--30">
@@ -136,17 +146,20 @@
                                         Class.forName("com.mysql.jdbc.Driver");
                                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
                                         String str = "";
+                                        int Cos_ID = 1;
+                                        int Res_ID = 10;
 
-                                        str = "Select * from food where Resturant_ID=10 order by Food_ID limit ? offset ?";
+                                        str = "Select * from food where Resturant_ID=? and Food_ID NOT IN (Select Food_ID from customer_cart where Status=1 and Customer_ID=?) order by Food_name limit ? offset ?";
                                         // if (str != "" && str.length() != 0) {
                                         int page_number = 1;
                                         if (pagemsg != null) {
                                             page_number = Integer.parseInt(pagemsg);
                                         }
 
-                                        String strQuery = "select count(*) from food where Resturant_ID=10";
+                                        String strQuery = "select count(*) from food where Resturant_ID=10 and Food_ID NOT IN (Select Food_ID from customer_cart where Status=1 and Customer_ID=1)";
                                         PreparedStatement pas = con.prepareStatement(strQuery);
-
+                                        //pas.setInt(1, Res_ID);
+                                        //pas.setInt(2, Cos_ID);
                                         ResultSet ses = pas.executeQuery();
                                         String Countrow = "";
 
@@ -154,15 +167,22 @@
                                             Countrow = ses.getString(1);
 
                                         }
+                                        ;
                                         int total = Integer.parseInt(Countrow);
 
                                         int perpage = 3;
-                                        double totpage = Math.ceil(total / perpage);
+                                        int totpage = (int) Math.ceil(total / perpage);
+                                        if (!(total % perpage == 0)) {
+                                            totpage++;
+                                        }
+
                                         int posit = (page_number - 1) * perpage;
                                         PreparedStatement ps = con.prepareStatement(str);
-                                        System.out.println(perpage + " " + posit);
-                                        ps.setInt(2, posit);
-                                        ps.setInt(1, perpage);
+
+                                        ps.setInt(1, Res_ID);
+                                        ps.setInt(2, Cos_ID);
+                                        ps.setInt(4, posit);
+                                        ps.setInt(3, perpage);
 
                                         //ps.setInt(1, resID);
                                         ResultSet rs = ps.executeQuery();
@@ -187,9 +207,10 @@
                                             <div class="food__list__details">
                                                 <h2><a href="menu-details.html"><%=Name%></a></h2>
                                                 <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
-                                                <span id="newdone"></span>
-                                                <div class="list__btn">
-                                                    <a  class="food__btn grey--btn theme--hover" onclick="addCart()">Order Now</a>
+                                                <div class="list__btn" >
+                                                    <button class="food__btn grey--btn theme--hover" onclick="add(<%=F_ID%>);
+                                                            this.disabled = true;
+                                                            this.innerHTML = 'Added To Cart';" id="added" style="border: none;">Order Now</button>
                                                 </div>
                                             </div>
                                             <div class="food__rating">
@@ -250,24 +271,28 @@
                                             }
                                         %>
                             </ul>
-                                    
+
                         </div>
                     </div>                
                 </div>
             </section> 
         </div>
-                                    
+
         <script src="../js/vendor/jquery-3.2.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/plugins.js"></script>
         <script src="../js/active.js"></script>
-         <script>
-       function myFunction() { 
-	document.getElementById("wrapper").style.display="none"; 
-	document.getElementById("mylocation").style.display="block"; 
-         }   
+        <script>
+                                                       function myFunction() {
+                                                           document.getElementById("wrapper").style.display = "none";
+                                                           document.getElementById("mylocation").style.display = "block";
+                                                       }
+
         </script>
+
+
+
     </body>
 </html>
 
