@@ -40,7 +40,7 @@
     </head>
     <body>
         
-        
+        <%@include file="../header.jsp" %>
         <div class="cart-main-area section-padding--lg bg--white">
             <div class="container">
                 <div class="row">
@@ -136,26 +136,7 @@
                 </div>
                                               
                                          
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-6">
-                        <div class="cartbox__total__area">
-                            <div class="cartbox-total d-flex justify-content-between">
-                                <ul class="cart__total__list">
-                                    <li>Cart total</li>
-                                    <li>Sub Total</li>
-                                </ul>
-                                <ul class="cart__total__tk">
-                                    <li>$70</li>
-                                    <li>$70</li>
-                                </ul>
-                            </div>
-                            
-                            
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>  
         </div>
                                       
