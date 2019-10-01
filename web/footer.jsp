@@ -30,7 +30,7 @@
                         <!-- Start Single Footer -->
                         <div class="col-md-6 col-lg-3 col-sm-12">
                             <div class="footer">
-                                <h2 class="ftr__title">About Aahar</h2>
+                                <h2 class="ftr__title">About Figgy</h2>
                                 <div class="footer__inner">
                                     <div class="ftr__details">
                                         <p>Lorem ipsum dolor sit amconsectetur adipisicing elit,</p>
@@ -40,7 +40,7 @@
                                                     <i class="zmdi zmdi-home"></i>
                                                 </div>
                                                 <div class="frt__address__details">
-                                                    <p>Elizabeth Tower. 6th Floor Medtown, New York</p>
+                                                    <p>Yelahanka-Bangalore-India,560097</p>
                                                 </div>
                                             </div>
                                             <div class="ftr__address">
@@ -57,7 +57,7 @@
                                                     <i class="zmdi zmdi-email"></i>
                                                 </div>
                                                 <div class="frt__address__details">
-                                                    <p><a href="#">Aahardelivery@email.com</a></p>
+                                                    <p><a href="#">Figgy@email.com</a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -78,12 +78,12 @@
                                 <h2 class="ftr__title">Our Gallery</h2>
                                 <div class="footer__inner">
                                     <ul class="sm__gallery__list">
-                                        <li><a href="#"><img src="images/gallery/sm-img/1.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="images/gallery/sm-img/2.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="images/gallery/sm-img/3.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="images/gallery/sm-img/4.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="images/gallery/sm-img/5.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="images/gallery/sm-img/6.jpg" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="../images/gallery/sm-img/1.jpg" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="../images/gallery/sm-img/2.jpg" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="../images/gallery/sm-img/3.jpg" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="../images/gallery/sm-img/4.jpg" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="../images/gallery/sm-img/5.jpg" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="../images/gallery/sm-img/6.jpg" alt="gallery images"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                         <div class="single__sm__post">
                                             <div class="sin__post__thumb">
                                                 <a href="blog-details,html">
-                                                    <img src="images/blog/sm-img/1.jpg" alt="blog images">
+                                                    <img src="../images/blog/sm-img/1.jpg" alt="blog images">
                                                 </a>
                                             </div>
                                             <div class="sin__post__details">
@@ -127,7 +127,7 @@
                                         <div class="single__sm__post">
                                             <div class="sin__post__thumb">
                                                 <a href="blog-details,html">
-                                                    <img src="images/blog/sm-img/2.jpg" alt="blog images">
+                                                    <img src="../images/blog/sm-img/2.jpg" alt="blog images">
                                                 </a>
                                             </div>
                                             <div class="sin__post__details">
@@ -138,7 +138,7 @@
                                         <div class="single__sm__post">
                                             <div class="sin__post__thumb">
                                                 <a href="blog-details,html">
-                                                    <img src="images/blog/sm-img/3.jpg" alt="blog images">
+                                                    <img src="../images/blog/sm-img/3.jpg" alt="blog images">
                                                 </a>
                                             </div>
                                             <div class="sin__post__details">
@@ -164,7 +164,7 @@
                                 </div>
                                 <div class="cpy__right--right">
                                     <a href="#">
-                                        <img src="images/icon/shape/2.png" alt="payment images">
+                                        <img src="../images/icon/shape/2.png" alt="payment images">
                                     </a>
                                 </div>
                             </div>

@@ -3,7 +3,10 @@
     Created on : Sep 10, 2019, 4:44:17 PM
     Author     : saru
 --%>
-
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -32,7 +35,7 @@
 </head>
 <body>
     
-    <header class="htc__header bg--white" style="position:sticky; top:0;">
+    <header class="htc__header bg--white" style="position:sticky; top:0;z-index: 1001">
         <!-- Start Mainmenu Area -->
         <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header" >
             <div class="container">
@@ -49,7 +52,7 @@
                             <nav class="main__menu__nav d-none d-lg-block" style="display: block;">
                                 <ul class="mainmenu">
                                     <li class="drop"><a href="../index.jsp">Home</a></li>
-                                    <li><a href="../about-us.html">About</a></li>
+                                    <li><a href="../AboutUs/AboutUs.jsp">About</a></li>
                                     <li class="drop"><a href="../Resturant-List/Resturant-List.jsp">Restaurant List</a></li>
                                    <!-- <li class="drop"><a href="../menu-list.html">Menu</a>
                                         <ul class="dropdown__menu">
@@ -58,12 +61,12 @@
                                     </li>-->
                                     
                                     
-                                    <li class="drop"><a href="">Pages</a>
-                                        <ul class="dropdown__menu">
+                                    <li class="drop"><a  href="../cart/cart.jsp">Cart Page</a>
+                                       <!-- <ul class="dropdown__menu">
                                             <li><a href="../service/service.jsp">Service</a></li>
                                             <li><a href="../cart/cart.jsp">Cart Page</a></li>
                                             <li><a href="../contact/contact.jsp">Contact Page</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
                                     <li><a href="../logout.jsp">Logout</a></li>
                                 </ul>
@@ -79,7 +82,31 @@
                             <div class="shopping__cart">
                                 <a class="minicart-trigger" href="../cart/cart.jsp"><i class="zmdi zmdi-shopping-basket"></i></a>
                                 <div class="shop__qun">
-                                    <span>03</span>
+                                    <%
+                                        Class.forName("com.mysql.jdbc.Driver");
+                                        Connection pon = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
+                                         String strin = "Select Count(*) from customer_cart where Status=1 and Customer_ID=?";
+
+                                    //preparing str called ps
+                                        PreparedStatement prea = pon.prepareStatement(strin);
+                                        prea.setInt(1,(Integer)session.getAttribute("id"));
+                                        
+                                        ResultSet rse = prea.executeQuery();
+                                        
+                                        int count=0;
+                                        while(rse.next())
+                                        {
+                                           count=Integer.parseInt(rse.getString(1));
+                                        
+
+                                        
+                                        %>
+                                            
+                                    <span><%=count%></span>
+                                    
+                                    <%
+                                        }
+                                    %>
                                 </div>
                             </div>
                         </div>
@@ -91,10 +118,10 @@
             </div>
         </div>
             </header>
-    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+   <!-- <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/active.js"></script>
+    <script src="js/active.js"></script>-->
 </body>
 </html>

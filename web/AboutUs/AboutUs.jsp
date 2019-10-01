@@ -59,14 +59,14 @@
                         <div class="service--2">
                             <div class="service__inner">
                                 <div class="service__content">
-                                    <h2><a href="service-details.html">fast delivery</a></h2>
+                                    <h2><a href="service-details.html">Fast Checkout</a></h2>
                                     <div class="ser__icon">
-                                        <img src="images/shape/service/1.png" alt="icon images">
+                                        <img src="../images/shape/service/1.png" alt="icon images">
                                     </div>
                                 </div>
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
-                                        <h4><a href="service-details.html">fast delivery</a></h4>
+                                        <h4><a href="service-details.html">Fast Checkout</a></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                         <ul>
                                             <li><a href="#">1.Low cost Shipping</a></li>
@@ -84,14 +84,14 @@
                         <div class="service--2">
                             <div class="service__inner">
                                 <div class="service__content">
-                                    <h2><a href="service-details.html">quality food</a></h2>
+                                    <h2><a href="service-details.html">Quality Food</a></h2>
                                     <div class="ser__icon">
-                                        <img src="images/shape/service/3.png" alt="icon images">
+                                        <img src="../images/shape/service/2.png" alt="icon images">
                                     </div>
                                 </div>
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
-                                        <h4><a href="service-details.html">quality food</a></h4>
+                                        <h4><a href="service-details.html">Quality Food</a></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                         <ul>
                                             <li><a href="#">1.Low cost Shipping</a></li>
@@ -109,14 +109,14 @@
                         <div class="service--2">
                             <div class="service__inner">
                                 <div class="service__content">
-                                    <h2><a href="service-details.html">various menu</a></h2>
+                                    <h2><a href="service-details.html">Various Menu</a></h2>
                                     <div class="ser__icon">
-                                        <img src="images/shape/service/4.png" alt="icon images">
+                                        <img src="../images/shape/service/3.png" alt="icon images">
                                     </div>
                                 </div>
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
-                                        <h4><a href="service-details.html">various menu</a></h4>
+                                        <h4><a href="service-details.html">Various Menu</a></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                         <ul>
                                             <li><a href="#">1.Low cost Shipping</a></li>
@@ -134,14 +134,14 @@
                         <div class="service--2">
                             <div class="service__inner">
                                 <div class="service__content">
-                                    <h2><a href="service-details.html">well service</a></h2>
+                                    <h2><a href="service-details.html">Good Service</a></h2>
                                     <div class="ser__icon">
-                                        <img src="images/shape/service/4.png" alt="icon images">
+                                        <img src="../images/shape/service/4.png" alt="icon images">
                                     </div>
                                 </div>
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
-                                        <h4><a href="service-details.html">well service</a></h4>
+                                        <h4><a href="service-details.html">Good Service</a></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                         <ul>
                                             <li><a href="#">1.Low cost Shipping</a></li>
@@ -202,13 +202,13 @@
                             <div class="team text-center foo">
                                 <div class="team__thumb">
                                     <a href="team-details.html">
-                                        <img src="36650353.jpg" alt="team images">
+                                        <img src="0.jpg" alt="team images">
                                     </a>
                                 </div>
                                 <div class="team__content" style=" padding:10px 19px 0px;">
                                     <div class="team__info">
                                         <h4><a href="team-details.html">Mayank Jain</a></h4>
-                                        <h6>Intern</h6>
+                                        <h6>Co-Founder</h6>
                                     </div>
                                     <p>adipisicing elid tempor in dolore magna alua. Ut enim ad minim veniamexercitation llamco laboris nisi ut aliqui</p>
                                     <ul class="team__social__net">

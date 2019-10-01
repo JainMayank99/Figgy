@@ -39,7 +39,33 @@
        
     </head>
     <body>
-        
+        <%
+            Integer SessionId=(Integer)session.getAttribute("id");
+            try{
+            if (session.getAttribute("id") != null)
+         {
+            out.println("<script type=\"text/javascript\">");
+             out.println("alert("+session.getAttribute("id")+")");
+            
+             out.println("</script>");
+              
+             
+            
+             
+             
+         }
+        else
+        {
+             out.println("<script type=\"text/javascript\">");
+             out.println("alert('You have not signed in.');");
+             out.println("location='../Login/login.jsp';");
+             out.println("</script>");
+            
+        }
+            }catch(Exception e){
+                //response.sendRedirect("Login/login.jsp");
+            }
+        %>
         <%@include file="../header.jsp" %>
         <div class="cart-main-area section-padding--lg bg--white">
             <div class="container">
@@ -68,10 +94,10 @@
                                     
                                          Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
                                            
-                                        int Customer_ID=2;
-                                        String str="select cc.ID,f.Food_name,f.Price,f.Food_ID,cc.Quantity from food as f ,customer_cart as cc WHERE f.Food_ID=cc.Food_ID and STATUS=1  AND Customer_ID=2";
+                                        int Customer_ID=SessionId;
+                                        String str="select cc.ID,f.Food_name,f.Price,f.Food_ID,cc.Quantity from food as f ,customer_cart as cc WHERE f.Food_ID=cc.Food_ID and STATUS=1  AND Customer_ID=?";
                                           PreparedStatement ps=con.prepareStatement(str);
-
+                                          ps.setInt(1, Customer_ID);
                                         ResultSet rs = ps.executeQuery();
                                           int i=1,total=0,Price,id=-1,fid=0,quan=0;
                                         //int rowCount = 0;
@@ -121,10 +147,9 @@
 
                                       <div class="cart__total__amount">
                                        <span>Grand Total</span>
-                                         <div id="grandtotal"><%=total%></div>
+                                       <b style="color:white"><div id="grandtotal"><%=total%></div></b>
                                       </div> 
-                                      
-                                      
+                
                         </form> 
                         <div class="cartbox__btn">
                             <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
@@ -134,16 +159,11 @@
                         </div>
                     </div>
                 </div>
-                                              
-                                         
-                
             </div>  
         </div>
-                                      
-                                      
-                                      
-                                      
-                                      
+        </div>
+         <%@include file="../footer.jsp" %>                             
+                            
         <script src="../js/vendor/jquery-3.2.1.min.js"></script>
 	<script src="../js/popper.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
@@ -178,14 +198,6 @@
                     alert("Unable to connect to server");
                 }
             }
-           
-           
-            
-         
-        </script>
-        
-          
-                                      
-        
+        </script>     
     </body>
 </html>

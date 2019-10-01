@@ -240,11 +240,13 @@
                                     <%
                                         String name = "";
                                         name = request.getParameter("val");
+                                        int res = -1;
+                                        res = Integer.parseInt(request.getParameter("resid"));
                                         System.out.println(name);
                                         if (name == null || name.trim().equals("")) {
                                             out.print("<center><p>Enter Item to be searched</p><br><center>");
                                             out.print("<center><p style='text-decoration: underline;'><b>OR</b></p><br><center>");
-                                            out.print("<center><a class='btn btn-primary' target='_blank' href='menu-list.jsp'>Search For ALL</a><center>");
+                                            out.print("<center><a class='btn btn-primary'  href='menu-list.jsp?num=1&res="+res+"'>Search For ALL</a><center>");
                                         } else {
                                             Class.forName("com.mysql.jdbc.Driver");
                                             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
@@ -252,8 +254,8 @@
                                             int rowCount;
 
                                             name = name.toLowerCase();
-                                            int Rest_ID = 10;
-                                            int Cost_ID = 1;
+                                            int Rest_ID = res;
+                                            int Cost_ID = (Integer)session.getAttribute("id");
 
                                             str = "Select * from food where Resturant_ID=? and Food_ID NOT IN (Select Food_ID from customer_cart where Status=1 and Customer_ID=?) and lower(Food_name) like '" + name + "%'";
 
@@ -290,9 +292,9 @@
                                                 <h2><a href="menu-details.html"><%=Name%></a></h2>
                                                 <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
                                                 <div class="list__btn">
-                                                    <button class="food__btn grey--btn theme--hover" onclick="add(<%=F_ID%>);
+                                                    <button class="food__btn grey--btn theme--hover" onclick="add(<%=F_ID%>,<%=Cost_ID%>);
                                                             this.disabled = true;
-                                                            this.innerHTML = 'Added To Cart';" id="added">Order Now</button>
+                                                            this.innerHTML = 'Added To Cart';" id="added" style="border: none;">Order Now</button>
                                                 </div>
                                             </div>
                                             <div class="food__rating">

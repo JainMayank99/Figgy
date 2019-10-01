@@ -56,21 +56,27 @@
                    
                     if(rs>0)
                     {
-                        session.setAttribute("sucess", "Sucessfully Signed Up");
+                        session.setAttribute("sucess", "Sucessfully Signed Up,Sign In Now");
                         //response.sendRedirect("login.html");
                         //session.setAttribute("member",member);
-                        //response.sendRedirect("../intro/intro.jsp");
+                        
+                        
+                        
+                        response.sendRedirect("login.jsp");
                     }
                         
                    
                    else
                    {
-
-                       session.setAttribute("sucess","Unsucessful");
-
-                      // response.sendRedirect("login.html");
+                       session.setAttribute("sucess", "Something Went Wrong");
+                      response.sendRedirect("login.jsp");
                        
                    }
+                }else
+                {
+                    
+                     session.setAttribute("sucess", "Email Already Exists");     
+                    response.sendRedirect("login.jsp");
                 }
                                
              %>

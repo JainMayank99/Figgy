@@ -1459,7 +1459,7 @@ a#scrollUp {
   .section__title.service__align--right {
     text-align: right; }
   .section__title::before {
-    background-image: url("images/icon/shape/1.png");
+    
     background-repeat: no-repeat;
     content: "";
     height: 14px;
@@ -2665,6 +2665,7 @@ nav.main__menu__nav {
     z-index: 3; }
     .slide .slider__content .slider__inner {
       text-align: center; }
+    
       .slide .slider__content .slider__inner h2 {
         margin-bottom: 16px;
         color: #ffffff;
@@ -2672,7 +2673,11 @@ nav.main__menu__nav {
         font-size: 50px;
         font-weight: 700;
         text-transform: uppercase;
-        line-height: 50px; }
+        line-height: 50px; 
+        -webkit-text-stroke: 1px black;
+        opacity: 1;
+        
+      }
       .slide .slider__content .slider__inner h1 {
         color: #ffffff;
         font-family: "Open Sans", sans-serif;
@@ -2706,7 +2711,7 @@ nav.main__menu__nav {
           width: 600px;
           outline: none; }
           .slide .slider__content .slider__inner .slider__input input.res__search {
-            width: 400px; }
+            width: 650px; }
         .slide .slider__content .slider__inner .slider__input .src__btn {
           margin-left: 3px; }
           .slide .slider__content .slider__inner .slider__input .src__btn a {

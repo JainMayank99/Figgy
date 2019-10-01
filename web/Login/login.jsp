@@ -14,12 +14,40 @@
 
 <body >
     
+    
    
-    
-    
-    <div class="container" id="container">
+    <%
+         if (session.getAttribute("id") != null)
+         {
+             
+             
+             out.println("<script type=\"text/javascript\">");
+            
+             out.println("alert('You have already Signed In. Sign Out to use another account');");
+              out.println("location='../index.jsp';");
+             out.println("</script>");
+             //response.sendRedirect("../index.jsp");
+             
+         }
+                
+         
+       String pri;
+   try{
+        pri=session.getAttribute("sucess").toString();
+        out.println("<center>"+pri+"</center>");
+
+                            session.removeAttribute("sucess");
+   }
+
+    catch(Exception e){
+                            
+    }
+   %>
+       
+   <br>
+    <div class="container" id="container" >
         <div class="form-container sign-up-container">
-            <form action="signup.jsp">
+            <form action="signup.jsp" method="post">
                 <h1>Create Account</h1>
                 <br>
                <!-- <span>or use your email for registration</span>-->
@@ -39,28 +67,15 @@
         
         
         
-         <%
-       String pri;
-   try{
-        pri=session.getAttribute("sucess").toString();
-        out.println("<center>"+pri+"</center>");
-
-                            session.removeAttribute("result");
-   }
-
-    catch(Exception e){
-                            
-    }
-   %>
-        
+          
         
         
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="signin.jsp" method="post">
                 <h1>Sign in</h1>
                 <br>
-                <input type="email" name="email" placeholder="Email" />
-                <input type="password" name="pass" placeholder="Password" />
+                <input type="email" name="email" required placeholder="Email" />
+                <input type="password" name="pass" required  placeholder="Password" />
                 <a href="forget-pass.html">Forgot your password?</a>
                 <button>Sign In</button>
             </form>

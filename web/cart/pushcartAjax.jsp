@@ -25,7 +25,7 @@
                                         int food = Integer.parseInt(request.getParameter("food"));
                                         int Cos =Integer.parseInt(request.getParameter("cos"));
                                         
-                                        System.out.println(food+"is"+Cos);
+                                        
                                        
                                             Class.forName("com.mysql.jdbc.Driver");
                                             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");

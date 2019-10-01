@@ -41,8 +41,9 @@
                                         
                                         
                                             //System.out.println("Message");
-                                            String str2 = "select cc.Quantity,f.Price from food as f ,customer_cart as cc WHERE f.Food_ID=cc.Food_ID and STATUS=1  AND Customer_ID=2";
+                                            String str2 = "select cc.Quantity,f.Price from food as f ,customer_cart as cc WHERE f.Food_ID=cc.Food_ID and STATUS=1  AND Customer_ID=?";
                                             PreparedStatement ps2 = con.prepareStatement(str2);
+                                            ps2.setInt(1, (Integer)session.getAttribute("id"));
                                             ResultSet rs = ps2.executeQuery();
                                             
                                             while(rs.next())
@@ -59,7 +60,7 @@
                                             System.out.println(sum);
                                             %>
                                             
-                                           <%=sum%>
+                                            <b style="color:white"><%=sum%></b>
                                             
                                             <% 
                                             //response.sendRedirect("cart.jsp");
