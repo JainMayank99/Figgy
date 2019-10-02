@@ -34,7 +34,7 @@
     </head>
 </head>
 <body>
-    
+
     <header class="htc__header bg--white" style="position:sticky; top:0;z-index: 1001">
         <!-- Start Mainmenu Area -->
         <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header" >
@@ -53,21 +53,24 @@
                                 <ul class="mainmenu">
                                     <li class="drop"><a href="../index.jsp">Home</a></li>
                                     <li><a href="../AboutUs/AboutUs.jsp">About</a></li>
-                                    <li class="drop"><a href="../Resturant-List/Resturant-List.jsp">Restaurant List</a></li>
-                                   <!-- <li class="drop"><a href="../menu-list.html">Menu</a>
-                                        <ul class="dropdown__menu">
-                                            <li><a href="menu-item/menu-list.jsp">Menu List</a></li>
-                                        </ul>
-                                    </li>-->
-                                    
-                                    
+                                    <li class="drop"><a href="../Resturant-List/Resturant-List.jsp">Resturant List</a></li>
+
+                                    <!-- <li class="drop"><a href="../menu-list.html">Menu</a>
+                                         <ul class="dropdown__menu">
+                                             <li><a href="menu-item/menu-list.jsp">Menu List</a></li>
+                                         </ul>
+                                     </li>-->
+
+
                                     <li class="drop"><a  href="../cart/cart.jsp">Cart Page</a>
-                                       <!-- <ul class="dropdown__menu">
-                                            <li><a href="../service/service.jsp">Service</a></li>
-                                            <li><a href="../cart/cart.jsp">Cart Page</a></li>
-                                            <li><a href="../contact/contact.jsp">Contact Page</a></li>
-                                        </ul> -->
+                                        <!-- <ul class="dropdown__menu">
+                                             <li><a href="../service/service.jsp">Service</a></li>
+                                             <li><a href="../cart/cart.jsp">Cart Page</a></li>
+                                             <li><a href="../contact/contact.jsp">Contact Page</a></li>
+                                         </ul> -->
                                     </li>
+
+                                    <li><a href="../OrderHistory/orderhistory.jsp">History</a></li>
                                     <li><a href="../logout.jsp">Logout</a></li>
                                 </ul>
                             </nav>
@@ -85,25 +88,23 @@
                                     <%
                                         Class.forName("com.mysql.jdbc.Driver");
                                         Connection pon = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
-                                         String strin = "Select Count(*) from customer_cart where Status=1 and Customer_ID=?";
+                                        String strin = "Select Count(*) from customer_cart where Status=1 and Customer_ID=?";
 
-                                    //preparing str called ps
+                                        //preparing str called ps
                                         PreparedStatement prea = pon.prepareStatement(strin);
-                                        prea.setInt(1,(Integer)session.getAttribute("id"));
-                                        
-                                        ResultSet rse = prea.executeQuery();
-                                        
-                                        int count=0;
-                                        while(rse.next())
-                                        {
-                                           count=Integer.parseInt(rse.getString(1));
-                                        
+                                        prea.setInt(1, (Integer) session.getAttribute("id"));
 
-                                        
-                                        %>
-                                            
+                                        ResultSet rse = prea.executeQuery();
+
+                                        int count = 0;
+                                        while (rse.next()) {
+                                            count = Integer.parseInt(rse.getString(1));
+
+
+                                    %>
+
                                     <span><%=count%></span>
-                                    
+
                                     <%
                                         }
                                     %>
@@ -117,11 +118,11 @@
                 <!-- Mobile Menu -->
             </div>
         </div>
-            </header>
-   <!-- <script src="js/vendor/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/active.js"></script>-->
+    </header>
+    <!-- <script src="js/vendor/jquery-3.2.1.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/plugins.js"></script>
+     <script src="js/active.js"></script>-->
 </body>
 </html>

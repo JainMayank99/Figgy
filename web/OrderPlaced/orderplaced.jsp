@@ -4,14 +4,64 @@
     Author     : Mayank Jain
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+       
     </head>
     <body>
         <h1>Hello World!</h1>
+      <%  
+
+          
+          
+          
+         Class.forName("com.mysql.jdbc.Driver");
+         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
+         String str="select cc.Customer_ID,cc.Food_ID,cc.Quantity from customer_cart as cc where cc.Customer_ID=2";
+         PreparedStatement ps = con.prepareStatement(str);
+         ResultSet rs = ps.executeQuery();
+         
+         
+         PreparedStatement ps2=null,ps3=null;
+         int cid=0,fid=0,quan=0;
+         while(rs.next())
+         {
+             cid=rs.getInt("Customer_ID");
+             fid=rs.getInt("Food_ID");
+             quan=rs.getInt("Quantity");
+             
+             String str2="insert into order_history(Customer_ID,Food_ID,Quantity) values (?,?,?)";
+             ps2=con.prepareStatement(str2);
+             
+             ps2.setInt(1,cid);
+             ps2.setInt(2,fid);
+             ps2.setInt(3,quan);
+           
+             System.out.println("CID"+cid+"fid"+fid+"quan"+quan);
+             
+             ps2.executeUpdate();
+             
+             String str3="DELETE FROM customer_cart WHERE Customer_ID= ? AND Food_ID= ? AND Status =1";
+             
+             ps3=con.prepareStatement(str3);
+             ps3.setInt(1,cid);
+             ps3.setInt(2,fid);
+             
+             ps3.executeUpdate();
+         }
+         
+         
+         
+  
+         %>                               
     </body>
 </html>
