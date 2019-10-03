@@ -69,6 +69,8 @@
                                             quan = rs.getInt("Quantity");
                                             datetime = rs.getString("DateTime");
                                             total = quan * price;
+                                            
+                                            datetime=datetime.substring(0,datetime.length()-5);
 
                                     %>
                                 <tbody>

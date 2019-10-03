@@ -82,7 +82,7 @@
                                         </ul>
                                     </li>-->
                                     
-                                    
+                                    <li><a href="../OrderHistory/orderhistory.jsp">History</a></li>
                                     <li class="drop"><a  href="cart/cart.jsp">Cart Page</a>
                                       <!--  <ul class="dropdown__menu">
                                             <li><a href="service/service.jsp">Service</a></li>
