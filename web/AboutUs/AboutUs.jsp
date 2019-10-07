@@ -188,10 +188,9 @@
                                     </div>
                                     <p>adipisicing elid tempor in dolore magna alua. Ut enim ad minim veniamexercitation llamco laboris nisi ut aliqui</p>
                                     <ul class="team__social__net">
-                                        <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-rss"></i></a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-tumblr"></i></a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                                        <li><a target="_blank" href="https://www.linkedin.com/in/sarveshwaran-s-7b5656149"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                        <li><a target="_blank" href="https://github.com/sarveshwaran1678"><i class="zmdi zmdi-github-alt zmdi-hc-fw"></i></a></li>
+                                        <li><a target="_blank" href="https://www.instagram.com/saru_shan_"><i class="zmdi zmdi-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -212,17 +211,16 @@
                                     </div>
                                     <p>adipisicing elid tempor in dolore magna alua. Ut enim ad minim veniamexercitation llamco laboris nisi ut aliqui</p>
                                     <ul class="team__social__net">
-                                        <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-rss"></i></a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-tumblr"></i></a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/mayank-jain-124040159"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                        <li><a href="https://github.com/BackStabber99"><i class="zmdi zmdi-github-alt zmdi-hc-fw"></i></a></li>
+                                        <li><a href="https://www.instagram.com/back_stabber_99"><i class="zmdi zmdi-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <!--End Single Team-->
                     </div>
-                </div> -->
+                </div> 
                 </div>
             </section>
         <%@include file="../footer.jsp" %>

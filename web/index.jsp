@@ -1,9 +1,14 @@
-<%-- 
+
+<%--
     Document   : index
     Created on : Sep 14, 2019, 4:30:38 PM
     Author     : saru
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
 
 <html>
     <head>
@@ -29,15 +34,16 @@
     </head>
     
     <body>
-        <%
+        <%  Integer SessionId=-1;
             try{
+               
             if (session.getAttribute("id") != null)
          {
             out.println("<script type=\"text/javascript\">");
              out.println("alert("+session.getAttribute("id")+")");
             
              out.println("</script>");
-             int SessionId=Integer.parseInt((String)session.getAttribute("id"));
+              SessionId=(Integer)session.getAttribute("id");
              
             
              
@@ -57,7 +63,7 @@
         %>
 
         <div class="wrapper" id="wrapper">
-            <header class="htc__header bg--white">
+            <header class="htc__header bg--white" style="position:sticky; top:0;z-index: 1001;">
         <!-- Start Mainmenu Area -->
         <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
             <div class="container">
@@ -65,7 +71,12 @@
                     <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="images/logo/foody.png" alt="logo images" style="width:200px;height:75%;margin:10px 10px 10px 10%;">
+                               <img  src="images/logo/foody.png" alt="logo images" style="position: absolute;width:170px;height:auto;
+                                     border-radius: 40px">
+                                <div class="shade" style="position:relative;top:0;left:0;width: 300px;height:100%;
+                                 background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15));
+                                 z-index: 2002;
+                                 "></div>
                             </a>
                         </div>
                     </div>
@@ -76,13 +87,14 @@
                                     <li class="drop"><a href="index.jsp">Home</a></li>
                                     <li><a href="AboutUs/AboutUs.jsp">About</a></li>
                                     <li class="drop"><a href="Resturant-List/Resturant-List.jsp">Restaurant List</a></li>
+                                    <li><a href="OrderHistory/orderhistory.jsp">History</a></li>
                                     <!--<li class="drop"><a href="menu-list.html">Menu</a>
                                         <ul class="dropdown__menu">
                                             <li><a href="menu-item/menu-list.jsp">Menu List</a></li>
                                         </ul>
                                     </li>-->
                                     
-                                    <li><a href="../OrderHistory/orderhistory.jsp">History</a></li>
+                                    
                                     <li class="drop"><a  href="cart/cart.jsp">Cart Page</a>
                                       <!--  <ul class="dropdown__menu">
                                             <li><a href="service/service.jsp">Service</a></li>
@@ -104,7 +116,32 @@
                             <div class="shopping__cart">
                                 <a class="minicart-trigger" href="cart/cart.jsp"><i class="zmdi zmdi-shopping-basket"></i></a>
                                 <div class="shop__qun">
-                                    <span>03</span>
+                                     <%
+                                        Class.forName("com.mysql.jdbc.Driver");
+                                        Connection pon = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
+                                        String strin = "Select Count(*) from customer_cart where Status=1 and Customer_ID=?";
+
+                                    //preparing str called ps
+                                        PreparedStatement prea = pon.prepareStatement(strin);
+                                        
+                                        prea.setInt(1,SessionId);
+                                        
+                                        ResultSet rse = prea.executeQuery();
+                                        
+                                        int count1=0;
+                                        while(rse.next())
+                                        {
+                                           count1=Integer.parseInt(rse.getString(1));
+                                        
+
+                                        
+                                        %>
+                                            
+                                    <span><%=count1%></span>
+                                    
+                                    <%
+                                        }
+                                           %>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +156,7 @@
             <div class="slider__area slider--one">
                 <div class="slider__activation--1">
                     <!-- Start Single Slide -->
-                    <div class="slide fullscreen bg-image--1">
+                    <div class="slide fullscreen bg-image--1" style="background-attachment: fixed;">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">

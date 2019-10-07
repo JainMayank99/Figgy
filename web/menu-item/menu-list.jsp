@@ -169,7 +169,7 @@
                 <div class="searchbar">
                     <span>Search:</span>
                     <input class="search_input" type="text" name="name" placeholder="Enter Text Here"  onfocusin="myFunction()" onkeyup="searchInfo(this.value,<%=resID%>)">  
-                    <a class="search_icon"><i class="fas fa-search"></i></a>
+                    <a class="search_icon" ><img style="width:40px;height: 40px;" src="../images/abc.png"></a>
                 </div>
             </div>
         </div>
@@ -243,7 +243,7 @@
                                          posit=number of items to skip before starting to count 
                                         
                                          */
-                                        int perpage = 3;
+                                        int perpage = 7;
                                         int totpage = (int) Math.ceil(total / perpage);
                                         if (!(total % perpage == 0)) {
                                             totpage++;
@@ -267,7 +267,7 @@
                                             String Name = rs.getString("Food_name");
                                             int Price = rs.getInt("Price");
                                             int R_ID = rs.getInt("Resturant_ID");
-                                            String Image = rs.getString("Image");
+                                            
 
 
                                     %>
@@ -281,7 +281,7 @@
                                         -->
                                         <div class="food__list__thumb">
                                             <a>
-                                                <img src="<%=Image%>" alt="list food images">
+                                                <img src="../images/default.png" alt="list food images" style="width:250px; height:250px">
                                             </a>
                                         </div>
                                         <!--

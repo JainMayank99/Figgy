@@ -274,7 +274,7 @@
                                                     String Name = rs.getString("Food_name");
                                                     int Price = rs.getInt("Price");
                                                     int R_ID = rs.getInt("Resturant_ID");
-                                                    String Image = rs.getString("Image");
+                                                    
                                     %>
 
 
@@ -284,7 +284,7 @@
                                     <div class="single__food__list d-flex wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                                         <div class="food__list__thumb">
                                             <a href="menu-details.html">
-                                                <img src="<%=Image%>" alt="list food images">
+                                                <img src="../images/default.png" alt="list food images" style="width:250px; height:250px">
                                             </a>
                                         </div>
                                         <div class="food__list__inner d-flex align-items-center justify-content-between">
