@@ -37,12 +37,14 @@
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
-            String str = "Select f.Food_name,f.Price,o.Quantity,o.DateTime from food as f ,order_history as o where f.Food_ID=o.Food_ID and Customer_ID=? ORDER by o.DateTime DESC";
+            String str = "Select o.DateTime from food as f ,order_history as o where f.Food_ID=o.Food_ID and Customer_ID=? GROUP by o.DateTime DESC";
             PreparedStatement ps = con.prepareStatement(str);
             ps.setInt(1, cid);
             String fname = "", datetime = "";
             int quan = 0, price = 0, total = 0;
             ResultSet rs = ps.executeQuery();
+            
+            
         %>
 
         <div class="cart-main-area section-padding--lg bg--white">
@@ -64,13 +66,24 @@
                                 <tbody>
                                     <%
                                         while (rs.next()) {
-                                            fname = rs.getString("Food_name");
-                                            price = rs.getInt("Price");
-                                            quan = rs.getInt("Quantity");
                                             datetime = rs.getString("DateTime");
                                             total = quan * price;
+                                            String str2="Select f.Food_name,f.Price,o.Quantity from food as f ,order_history as o where f.Food_ID=o.Food_ID and Customer_ID=? and o.DateTime='?'";
+                                            PreparedStatement ps2 = con.prepareStatement(str2);
+                                            ps2.setInt(1, cid);
+                                            ps2.setString(2,datetime);
+                                            ResultSet rs2 = ps.executeQuery();
                                             
                                             datetime=datetime.substring(0,datetime.length()-5);
+                                            
+                                            
+                                            while (rs2.next())
+                                            {
+                                                 fname = rs.getString("Food_name");
+                                                 price = rs.getInt("Price");
+                                                 quan = rs.getInt("Quantity");
+                                                 total=price*quan;
+                                           
 
                                     %>
                                 <tbody>
@@ -89,6 +102,7 @@
 
 
                                 <%
+                                            }
                                     }
 
 
