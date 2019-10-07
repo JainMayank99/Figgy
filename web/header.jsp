@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta charset="utf-8">
         <meta name="description" content="">
@@ -73,7 +73,7 @@
                                         </ul>
                                     </li>-->
                                     
-                                    <li><a href="OrderHistory/orderhistory.jsp">History</a></li>
+                                    <li><a href="../OrderHistory/orderhistory.jsp">History</a></li>
                                     <li class="drop"><a  href="../cart/cart.jsp">Cart Page</a>
                                        <!-- <ul class="dropdown__menu">
                                             <li><a href="../service/service.jsp">Service</a></li>

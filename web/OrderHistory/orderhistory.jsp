@@ -37,84 +37,139 @@
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
-            String str = "Select o.DateTime from food as f ,order_history as o where f.Food_ID=o.Food_ID and Customer_ID=? GROUP by o.DateTime DESC";
-            PreparedStatement ps = con.prepareStatement(str),ps2;
+            String str = "Select r.Resturant_Name,r.Img,o.DateTime from food as f,resturant as r ,order_history as o where f.Resturant_Name=f.Resturant_Name and f.Food_ID=o.Food_ID and Customer_ID=? GROUP by o.DateTime DESC";
+            PreparedStatement ps = con.prepareStatement(str), ps2;
             String str2;
             ps.setInt(1, cid);
-            String fname = "", datetime = "";
+            String fname = "", datetime = "",rname="",img="";
             int quan = 0, price = 0, total = 0;
-            ResultSet rs = ps.executeQuery(),rs2;
-            
-            
+            ResultSet rs = ps.executeQuery(), rs2;
+
+
         %>
 
-        <div class="cart-main-area section-padding--lg bg--white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 ol-lg-12">
-                        <div class="table-content table-responsive">
-                            <table>
-                                <thead >
-                                    <tr class="title-top"  >
-                                        <th class="product-name">Product</th>
-                                        <th class="product-price">Price</th>
-                                        <th class="product-quantity">Quantity</th>
-                                        <th class="product-subtotal">Total</th>
-                                        <th class="product-remove">Ordered On</th>
-                                    </tr>
-                                </thead>
 
-                                <tbody>
-                                    <%
-                                        while (rs.next()) {
-                                            datetime = rs.getString("DateTime");
-                                            total = quan * price;
-                                            str2="Select f.Food_name,f.Price,o.Quantity from food as f ,order_history as o where f.Food_ID=o.Food_ID and Customer_ID=? and o.DateTime='?'";
-                                            ps2 = con.prepareStatement(str2);
-                                            ps2.setInt(1, cid);
-                                            ps2.setString(2,datetime);
-                                            rs2 = ps2.executeQuery();
-                                            
-                                            datetime=datetime.substring(0,datetime.length()-5);
-                                            
-                                            
-                                            while (rs2.next())
-                                            {
-                                                 fname = rs2.getString("Food_name");
-                                                 price = rs2.getInt("Price");
-                                                 quan = rs2.getInt("Quantity");
-                                                 total=price*quan;
-                                           
+        <div id="root" style="height: 100%;">
+            <div class="_3arMG">
+                <div class="nDVxx">
+                    <div class="_1w2w1">
+                        <div class="_3tDvm ">
+                            <div class="v6luz FvIBT"></div>
+                            <div class="_2QhOV _3glSS">
+                                <div class="_3R9IF">
+                                    <div class="_1stFr">
+                                        <div>
+                                            <div>
+                                                <div class="_3lCtm">Past Orders</div>
 
-                                    %>
-                                <tbody>
-                                    <tr>
-                                        <td class="product-name"><%=fname%></td>
-                                        <td class="product-price"><span class="amount"><%=price%></span></td>
-                                        <td class="product-quantity" ><%=quan%></td>
-                                        <td class="product-subtotal" ><%=total%></td> 
-                                        <td><b><%=datetime%></b></td>
+                                                <%   
+                                                    while (rs.next()) {
+                                                        rname=rs.getString("Resturant_Name");
+                                                        img=rs.getString("Img");
+                                                        datetime = rs.getString("DateTime");
+                                                        
+                                                        total = quan * price;
+                                                        str2 = "Select f.Food_name,f.Price,o.Quantity from resturant as r, food as f ,order_history as o where f.Food_ID=o.Food_ID and Customer_ID=? and o.DateTime='?'";
+                                                        ps2 = con.prepareStatement(str2);
+                                                        ps2.setInt(1, cid);
+                                                        ps2.setString(2, datetime);
+                                                        rs2 = ps2.executeQuery();
 
-                                    </tr>
-                                </tbody>
+                                                        datetime = datetime.substring(0, datetime.length() - 5);
+                                                        
+                                                        
+                                                        %>
+                                                        
+                                                         <div>
+                                                    <div class="_3xMk0">
+                                                        <div class="g28rk">
+                                                            <div class="_359Fc">
+                                                                <img
+                                                                    class="_2tuBw _12_oN"
+                                                                    height="200"
+                                                                    width="300"
+                                                                    alt=""
+                                                                    src=<%=img%>
+                                                                    />
+                                                            </div>
+                                                            <div class="_2XWVq">
+                                                                <div class="_3h4gz"><%=rname%></div>
+                                                                
+                                                                <div class="_2uT6l">
+                                                                    ORDERED ON <%=datetime%>
+                                                                </div>
+                                                                
+                                                                <div class="_2fkm7">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="_3SKK0">
+                                                            <div class="nRCg_">
+
+                                                        <%        
+                                                        while (rs2.next())
+                                                        {
+                                                            
+                                                            
+                                                            fname = rs2.getString("Food_name");
+                                                            price = rs2.getInt("Price");
+                                                            quan = rs2.getInt("Quantity");
+                                                            total += price * quan;
+                                                            
+
+
+                                                %>
+
+
+
+                                               
+                                                               <%=fname%> x <%=quan%>, 
+                                                            
 
 
 
 
 
-                                <%
-                                            }
-                                    }
 
 
-                                %>
 
-                            </table>
+                                                <%                                        }
+                                                        %>
+                                                        
+                                                        
+                                                        </div>
+                                                            <div class="_2a27y">
+                                                                <!--
+                                                                <a class="_3PUy8 f4Ovn">REORDER</a
+                                                                >
+                                                            </div>
+                                                                -->
+                                                            <div class="_23DHc">
+                                                                Total Paid: <span class="_3Hghg"> <%=total%> </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                        
+                                                        
+                                                      <%  
+                                                    }
+
+
+                                                %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="_1a4Mf _3m2h5"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <%@include file="../footer.jsp" %>    
     </body>
 </html>

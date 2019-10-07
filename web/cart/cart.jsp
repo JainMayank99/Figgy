@@ -154,7 +154,7 @@
                         <div class="cartbox__btn">
                             <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                                 <li><a href="#">Update Cart</a></li>
-                                <li><a href="#">Check Out</a></li>
+                                <li><a href="../OrderPlaced/orderplaced.jsp">Check Out</a></li>
                             </ul>
                         </div>
                     </div>
