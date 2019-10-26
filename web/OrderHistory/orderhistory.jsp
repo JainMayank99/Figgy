@@ -98,6 +98,7 @@
                                                             ps2.setInt(1, cid);
 
                                                             rs2 = ps2.executeQuery();
+                                                            Fids="";
 
 
                                                     %>
@@ -164,7 +165,7 @@
                                                                 <div class="_2a27y">
                                                                     
 
-                                                                    <a class="_3PUy8 f4Ovn" href="../cart/pushcartAjax.jsp?food=<%=Fids%>&cos=<%=cid%>" >REORDER</a>
+                                                                    <a class="_3PUy8 f4Ovn" href="reorder.jsp?cid=<%=cid%>&food=<%=Fids%>">REORDER</a>
 
                                                                 </div>
 
