@@ -73,7 +73,6 @@
                                         </ul>
                                     </li>-->
                                     
-                                    
                                     <li class="drop"><a  href="../cart/cart.jsp">Cart Page</a>
                                        <!-- <ul class="dropdown__menu">
                                             <li><a href="../service/service.jsp">Service</a></li>
@@ -81,6 +80,8 @@
                                             <li><a href="../contact/contact.jsp">Contact Page</a></li>
                                         </ul> -->
                                     </li>
+                                    <li class="drop"><a  href="../OrderHistory/orderhistory.jsp">Order History</a>
+                                    
                                     <li><a href="../logout.jsp">Logout</a></li>
                                 </ul>
                             </nav>

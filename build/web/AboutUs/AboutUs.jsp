@@ -67,12 +67,7 @@
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
                                         <h4><a href="service-details.html">Fast Checkout</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                        <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
-                                        </ul>
+                                        <p>Its in our best interest to most quickly deliver food to you and to achieve that we keep upgrading our services everyday</p>  
                                     </div>
                                 </div>
                             </div>
@@ -92,12 +87,7 @@
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
                                         <h4><a href="service-details.html">Quality Food</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                        <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
-                                        </ul>
+                                        <p>We try to provide our customer with fresh and best quality of food avaliable in the market</p>
                                     </div>
                                 </div>
                             </div>
@@ -117,12 +107,7 @@
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
                                         <h4><a href="service-details.html">Various Menu</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                        <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
-                                        </ul>
+                                        <p>We offer our customers the most vast menu available in variety of different cuisine</p> 
                                     </div>
                                 </div>
                             </div>
@@ -142,12 +127,7 @@
                                 <div class="service__hover__action d-flex align-items-center">
                                     <div class="service__hover__inner">
                                         <h4><a href="service-details.html">Good Service</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna Ut eniad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                        <ul>
-                                            <li><a href="#">1.Low cost Shipping</a></li>
-                                            <li><a href="#">2.On time delivery</a></li>
-                                            <li><a href="#">3.Transport : Container Van / By cycle / Others</a></li>
-                                        </ul>
+                                        <p>We try to provide our best services to our each and every customer with our best intention in favour of our customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +166,7 @@
                                         <h4><a href="team-details.html">Sarveshwaran</a></h4>
                                         <h6>Founder</h6>
                                     </div>
-                                    <p>adipisicing elid tempor in dolore magna alua. Ut enim ad minim veniamexercitation llamco laboris nisi ut aliqui</p>
+                                    <p>THE BOSS    Yenna Rascasla Minded</p>
                                     <ul class="team__social__net">
                                         <li><a target="_blank" href="https://www.linkedin.com/in/sarveshwaran-s-7b5656149"><i class="zmdi zmdi-linkedin"></i></a></li>
                                         <li><a target="_blank" href="https://github.com/sarveshwaran1678"><i class="zmdi zmdi-github-alt zmdi-hc-fw"></i></a></li>
@@ -209,7 +189,7 @@
                                         <h4><a href="team-details.html">Mayank Jain</a></h4>
                                         <h6>Co-Founder</h6>
                                     </div>
-                                    <p>adipisicing elid tempor in dolore magna alua. Ut enim ad minim veniamexercitation llamco laboris nisi ut aliqui</p>
+                                    <p>Lol!!..  Actually this guy did everything. I just copy pasted few parts of code.</p>
                                     <ul class="team__social__net">
                                         <li><a href="https://www.linkedin.com/in/mayank-jain-124040159"><i class="zmdi zmdi-linkedin"></i></a></li>
                                         <li><a href="https://github.com/BackStabber99"><i class="zmdi zmdi-github-alt zmdi-hc-fw"></i></a></li>

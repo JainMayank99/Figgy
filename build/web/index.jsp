@@ -101,6 +101,7 @@
                                             <li><a href="contact/contact.jsp">Contact Page</a></li>
                                         </ul>-->
                                     </li>
+                                    
                                     <li><a href="logout.jsp">Logout</a></li>
                                 </ul>
                             </nav>
