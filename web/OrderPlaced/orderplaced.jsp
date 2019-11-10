@@ -2,6 +2,7 @@
     Document   : orderplaced
     Created on : 1 Oct, 2019, 2:10:49 PM
     Author     : Mayank Jain
+    Confirnmation  to show that order has been placed and being able to redirect to order history page
 --%>
 
 <%@page import="java.sql.ResultSet"%>
@@ -131,7 +132,7 @@ p.error {
             try {
                 if (session.getAttribute("id") != null) {
                     out.println("<script type=\"text/javascript\">");
-                    out.println("alert(" + session.getAttribute("id") + ")");
+                    
                     out.println("</script>");
                     SessionId=(Integer)session.getAttribute("id");
                 } else {

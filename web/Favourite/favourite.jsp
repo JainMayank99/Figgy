@@ -30,7 +30,6 @@
             if (session.getAttribute("id") != null)
          {
             out.println("<script type=\"text/javascript\">");
-             out.println("alert("+session.getAttribute("id")+")");
             
              out.println("</script>");
               

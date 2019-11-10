@@ -123,7 +123,7 @@ input[type="search"] {
             try {
                 if (session.getAttribute("id") != null) {
                     out.println("<script type=\"text/javascript\">");
-                    out.println("alert(" + session.getAttribute("id") + ")");
+                    
                     out.println("</script>");
                     SessionId=(Integer)session.getAttribute("id");
                 } else {
@@ -665,7 +665,7 @@ input[type="search"] {
                document.getElementById("wra").style.display = "none";
                document.getElementById("dav").style.display = "none";
                 //Call to Resturant-List.jsp
-                alert(Dir+ " "+SortID+""+Pag);
+               
                 var url = "Resturant-List.jsp?SortID=" + SortID + "&Dir=" + Dir +"&num=" + Pag;
 
                 //Returns the output of Resturant-List.jsp to 'myloca'
