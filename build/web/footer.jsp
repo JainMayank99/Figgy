@@ -48,8 +48,8 @@
                                                     <i class="zmdi zmdi-phone"></i>
                                                 </div>
                                                 <div class="frt__address__details">
-                                                    <p><a href="#">+088 01673-453290</a></p>
-                                                    <p><a href="#">+088 01773-458290</a></p>
+                                                    <p><a href="#">+091 7800631876</a></p>
+                                                    <p><a href="#">+091 9980955361</a></p>
                                                 </div>
                                             </div>
                                             <div class="ftr__address">
@@ -62,12 +62,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <ul class="social__icon">
-                                            <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-rss"></i></a></li>
-                                        </ul>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -79,12 +74,12 @@
                                 <h2 class="ftr__title">Our Gallery</h2>
                                 <div class="footer__inner">
                                     <ul class="sm__gallery__list">
-                                        <li><a href="#"><img src="../images/gallery/sm-img/1.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="../images/gallery/sm-img/2.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="../images/gallery/sm-img/3.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="../images/gallery/sm-img/4.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="../images/gallery/sm-img/5.jpg" alt="gallery images"></a></li>
-                                        <li><a href="#"><img src="../images/gallery/sm-img/6.jpg" alt="gallery images"></a></li>
+                                       <li><a href="#"><img src="images/gallery/sm-img/1.png" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="images/gallery/sm-img/2.png" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="images/gallery/sm-img/3.png" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="images/gallery/sm-img/4.png" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="images/gallery/sm-img/5.png" alt="gallery images"></a></li>
+                                        <li><a href="#"><img src="images/gallery/sm-img/6.png" alt="gallery images"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -117,18 +112,18 @@
                                         <div class="single__sm__post">
                                             <div class="sin__post__thumb">
                                                 <a href="blog-details,html">
-                                                    <img src="../images/blog/sm-img/1.jpg" alt="blog images">
+                                                    <img src="images/blog/sm-img/1.png" alt="blog images">
                                                 </a>
                                             </div>
                                             <div class="sin__post__details">
-                                               <h6><a href="blog-details.html">Chicken Shawarma </a></h6>
+                                                <h6><a href="blog-details.html">Chicken Shawarma</a></h6>
                                                 <p>A roll plate filled with delicious boneless chicken shreded pieces</p>
                                             </div>
                                         </div>
                                         <div class="single__sm__post">
                                             <div class="sin__post__thumb">
                                                 <a href="blog-details,html">
-                                                    <img src="images/blog/sm-img/2.jpg" alt="blog images">
+                                                    <img src="images/blog/sm-img/2.png" alt="blog images">
                                                 </a>
                                             </div>
                                             <div class="sin__post__details">
@@ -139,7 +134,7 @@
                                         <div class="single__sm__post">
                                             <div class="sin__post__thumb">
                                                 <a href="blog-details,html">
-                                                    <img src="images/blog/sm-img/3.jpg" alt="blog images">
+                                                    <img src="images/blog/sm-img/3.png" alt="blog images">
                                                 </a>
                                             </div>
                                             <div class="sin__post__details">

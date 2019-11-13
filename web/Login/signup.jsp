@@ -75,7 +75,7 @@
                 }else
                 {
                     
-                     session.setAttribute("sucess", "Email Already Exists");     
+                     session.setAttribute("failure", "Email Already Exists");     
                     response.sendRedirect("login.jsp");
                 }
                                

@@ -166,7 +166,7 @@
                                         <h4><a href="team-details.html">Sarveshwaran</a></h4>
                                         <h6>Founder</h6>
                                     </div>
-                                    <p>THE BOSS    Yenna Rascasla Minded</p>
+                                    <p>Goal oriented, focused computer science under-graduate from SVCE. Google cloud enthusiast.Creating websites since 2015.</p>
                                     <ul class="team__social__net">
                                         <li><a target="_blank" href="https://www.linkedin.com/in/sarveshwaran-s-7b5656149"><i class="zmdi zmdi-linkedin"></i></a></li>
                                         <li><a target="_blank" href="https://github.com/sarveshwaran1678"><i class="zmdi zmdi-github-alt zmdi-hc-fw"></i></a></li>
