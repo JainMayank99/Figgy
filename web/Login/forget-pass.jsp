@@ -28,6 +28,8 @@
             String str = "UPDATE customer set PASSWORD='"+pass+"' where Email='"+email+"'";
             PreparedStatement pre=con.prepareStatement(str);
             pre.executeUpdate();
+            
+            
             response.sendRedirect("login.jsp");
             
             
