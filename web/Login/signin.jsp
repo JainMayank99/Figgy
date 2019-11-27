@@ -22,10 +22,15 @@
             String email=request.getParameter("email");
             String pass=request.getParameter("pass");
             
+            
+             if(email.toLowerCase().equals("admin@admin")  && pass.toLowerCase().equals("admin")  ){
+                    response.sendRedirect("../Admin/Admin.jsp");
+                }else{
                     
              Class.forName("com.mysql.jdbc.Driver");
                 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
                  
+               
                 
                 
                
@@ -54,7 +59,7 @@
                     session.setAttribute("sucess", "Email Does not Exists");     
                     response.sendRedirect("login.jsp");
                 }
-                               
+             }         
              %>
     </body>
 </html>

@@ -2,7 +2,6 @@
     Document   : insertcart
     Created on : 25 Sep, 2019, 2:27:17 PM
     Author     : Mayank Jain
-    Page to insert the item quantity in database and refreshing the original page to show the changes in original cart page
 --%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>

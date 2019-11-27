@@ -122,9 +122,7 @@ input[type="search"] {
             Integer SessionId;
             try {
                 if (session.getAttribute("id") != null) {
-                    out.println("<script type=\"text/javascript\">");
                     
-                    out.println("</script>");
                     SessionId=(Integer)session.getAttribute("id");
                 } else {
                     out.println("<script type=\"text/javascript\">");
@@ -228,6 +226,7 @@ input[type="search"] {
 
                                         //Initizization
                                         String Countrow = "";
+                                        
                                         int total;
 
                                         //Query to Count the total number of resturants
@@ -665,7 +664,7 @@ input[type="search"] {
                document.getElementById("wra").style.display = "none";
                document.getElementById("dav").style.display = "none";
                 //Call to Resturant-List.jsp
-               
+                
                 var url = "Resturant-List.jsp?SortID=" + SortID + "&Dir=" + Dir +"&num=" + Pag;
 
                 //Returns the output of Resturant-List.jsp to 'myloca'

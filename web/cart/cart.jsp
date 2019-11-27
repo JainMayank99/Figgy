@@ -1,4 +1,4 @@
- <%-- 
+<%-- 
     Document   : cart
     Created on : Sep 10, 2019, 7:00:35 PM
     Author     : saru
@@ -44,10 +44,7 @@
             try{
             if (session.getAttribute("id") != null)
          {
-            out.println("<script type=\"text/javascript\">");
-            // out.println("alert("+session.getAttribute("id")+")");
-            
-             out.println("</script>");
+           
               
              
             
@@ -95,7 +92,6 @@
                                          Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
                                            
                                         int Customer_ID=SessionId;
-                                        //To get cart items of each customer from custtomer cart table 
                                         String str="select cc.ID,f.Food_name,f.Price,f.Food_ID,cc.Quantity from food as f ,customer_cart as cc WHERE f.Food_ID=cc.Food_ID and STATUS=1  AND Customer_ID=?";
                                           PreparedStatement ps=con.prepareStatement(str);
                                           ps.setInt(1, Customer_ID);
@@ -120,7 +116,6 @@
                                         <tr>
                                             <td class="product-name"><%=Food_name%></td>
                                             <td class="product-price"><span class="amount"><%=Price%></span></td>
-                                            <!-- To change total value when the arrows are changed --> 
                                             <td class="product-quantity" ><input type="number" id="p" name="quantity" value="<%=quan%>" min="0" onchange="Change(this.value,<%=Price%>,<%=i%>,<%=fid%>);"></td>
                                             <td class="product-subtotal" id="<%=i%>"><%=Price*quan%></td> 
                                             <%
@@ -171,7 +166,6 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/plugins.js"></script>
 	<script src="../js/active.js"></script>
-        <!--function to save changes made directly to database and representing it back to screen-->
         <script>
              var request = new XMLHttpRequest();
             function Change(value,price,id,fid)

@@ -67,22 +67,22 @@
                                     <li class="drop"><a href="../index.jsp">Home</a></li>
                                     <li><a href="../AboutUs/AboutUs.jsp">About</a></li>
                                     <li class="drop"><a href="../Resturant-List/Resturant-List.jsp">Restaurant List</a></li>
-                                   <!-- <li class="drop"><a href="../menu-list.html">Menu</a>
+                                    <!--<li class="drop"><a href="menu-list.html">Menu</a>
                                         <ul class="dropdown__menu">
                                             <li><a href="menu-item/menu-list.jsp">Menu List</a></li>
                                         </ul>
                                     </li>-->
                                     
-                                    <li class="drop"><a  href="../cart/cart.jsp">Cart Page</a>
-                                       <!-- <ul class="dropdown__menu">
-                                            <li><a href="../service/service.jsp">Service</a></li>
-                                            <li><a href="../cart/cart.jsp">Cart Page</a></li>
-                                            <li><a href="../contact/contact.jsp">Contact Page</a></li>
-                                        </ul> -->
-                                    </li>
-                                    <li class="drop"><a  href="../OrderHistory/orderhistory.jsp">Order History</a>
                                     
-                                    <li><a href="../logout.jsp">Logout</a></li>
+                                    <li class="drop"><a href="../cart/cart.jsp">Cart Page</a>
+                                      <!--  <ul class="dropdown__menu">
+                                            <li><a href="service/service.jsp">Service</a></li>
+                                            <li><a href="cart/cart.jsp">Cart Page</a></li>
+                                            <li><a href="contact/contact.jsp">Contact Page</a></li>
+                                        </ul>-->
+                                    </li>
+                                    <li><a href="../OrderHistory/orderhistory.jsp">History</a></li>
+                                    <li><a href="../Login/login.jsp">Logout</a></li>
                                 </ul>
                             </nav>
 

@@ -75,7 +75,7 @@
                 var food = value;
                 var cos_id = cos;
                 //food = menu-item-id , cos_id = Costumer_id
-                //alert(food +" " + cos); 
+                
 
 
                 //Call to pushcartAjax.jsp
@@ -111,9 +111,7 @@
             Integer SessionId=(Integer)session.getAttribute("id");
             try {
                 if (session.getAttribute("id") != null) {
-                    out.println("<script type=\"text/javascript\">");
-                    //out.println("alert(" + session.getAttribute("id") + ")");
-                    out.println("</script>");
+                    
 
                     
 
@@ -307,12 +305,8 @@
                                                 <!--
                                                    Content For Menu-Item 
                                                 -->
-                                                <p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nobis ullam magnam deserunt? Esse, debitis id amet consectetur, sunt rerum voluptas dolores, quam veritatis fuga tenetur necessitatibus laudantium excepturi earum.</p>
-                                                <!--
-                                                   Removed Lorem ipsum from here
-                                                -->
-                                                
+                                                <p>Lorem ipsum dolor sit aLorem ipsum dolor sit amet, consectetu adipis cing elit, sed do eiusmod tempor incididunt ut labore et dolmagna aliqua. enim ad minim veniam, quis nomagni dolores eos qnumquam.</p>
+
                                                 <!--
                                                     Add to cart button
                                                     Button is disabled on click and 

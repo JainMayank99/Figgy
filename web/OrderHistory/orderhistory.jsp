@@ -41,9 +41,7 @@
 
                 try {
                     if (session.getAttribute("id") != null) {
-                        out.println("<script type=\"text/javascript\">");
                        
-                        out.println("</script>");
                         SessionId = (Integer) session.getAttribute("id");
                     } else {
                         out.println("<script type=\"text/javascript\">");
@@ -59,7 +57,6 @@
 
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/figgy", "root", "");
-                //Query to get different orderhistory based on user ID 
                 String str = "Select distinct r.Resturant_Name,r.Img,o.DateTime,Date_Format(DateTime ,'%Y-%m-%d %H:%i') as formated_date from food as f,resturant as r ,order_history as o where f.Resturant_Name=r.Resturant_Name and f.Food_ID=o.Food_ID and Customer_ID=? GROUP by formated_date DESC";
                 PreparedStatement ps = con.prepareStatement(str), ps2;
                 String str2;
@@ -94,7 +91,6 @@
                                                             datetime = rs.getString("formated_date");
 
                                                             total = quan * price;
-                                                            //queries to get differnt items in each card
                                                             str2 = "Select distinct f.Food_ID,f.Food_name,f.Price,o.Quantity from resturant as r, food as f ,order_history as o where f.Food_ID=o.Food_ID and Customer_ID=? and o.DateTime=' " + odt + "'";
                                                             ps2 = con.prepareStatement(str2);
                                                             ps2.setInt(1, cid);
@@ -134,7 +130,6 @@
                                                                 <div class="nRCg_">
 
                                                                     <%
-                                                                    //getting items in each card
                                                                         while (rs2.next()) {
 
                                                                             fid = rs2.getInt("Food_ID");
